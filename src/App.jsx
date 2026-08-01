@@ -3,6 +3,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import logoImg from '../ChatGPT Image Jul 31, 2026, 01_42_37 PM.png';
 import locImg from '../loc.png';
+import companyImg from '../Gemini_Generated_Image_r73yrfr73yrfr73y.png';
 
 const categories = [
   {
@@ -104,6 +105,13 @@ function App() {
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.35em] text-rust-500">About the company</p>
               <h2 className="mt-4 text-3xl font-black text-olive-900">SHAHNAWAZ FOODS AND AGRO LLP</h2>
+              <div className="mt-4 flex items-center justify-start">
+                <img
+                  src={companyImg}
+                  alt="Shahanawaz Food and Agro LLP - premises"
+                  className="max-w-full w-[520px] rounded-lg border border-olive-100 object-cover shadow-md"
+                />
+              </div>
             </div>
 
             <div className="text-base leading-7 text-olive-700">
