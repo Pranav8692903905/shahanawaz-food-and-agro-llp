@@ -1,3 +1,6 @@
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import logoImg from '../ChatGPT Image Jul 31, 2026, 01_42_37 PM.png';
 import locImg from '../loc.png';
 
@@ -43,9 +46,12 @@ const products = [
 ];
 
 function App() {
+  useEffect(() => {
+    AOS.init({ duration: 800, easing: 'ease-out-cubic', once: true });
+  }, []);
   return (
     <div className="min-h-screen bg-[radial-gradient(circle_at_top,_rgba(142,160,63,0.22),_transparent_38%),linear-gradient(180deg,#f8f6ef_0%,#f3f0e7_100%)] text-olive-900">
-      <header className="sticky top-0 z-30 border-b bg-white/80 backdrop-blur-xl">
+      <header data-aos="fade-down" className="sticky top-0 z-30 border-b bg-white/80 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-4">
             <div className="h-10 w-10 rounded-full bg-sky-100 flex items-center justify-center overflow-hidden">
@@ -66,7 +72,7 @@ function App() {
       </header>
 
       <main>
-        <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+        <section data-aos="fade-up" className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
           <div className="grid h-[56vh] items-center gap-8 lg:grid-cols-2">
             <div className="flex flex-col justify-center">
               <h1 className="text-5xl font-extrabold leading-tight text-olive-900 md:text-6xl">
@@ -86,15 +92,14 @@ function App() {
               </a>
             </div>
 
-            <div className="flex items-center justify-center">
+            <div data-aos="zoom-in" className="flex items-center justify-center">
               <div className="flex h-64 w-64 items-center justify-center overflow-hidden rounded-full bg-white shadow-md">
                 <img src={logoImg} alt="Company logo" className="h-full w-full object-contain" />
               </div>
             </div>
           </div>
         </section>
-
-        <section id="about" className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+        <section id="about" data-aos="fade-up" className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
           <div className="grid gap-6 rounded-[2rem] border border-olive-200 bg-white p-8 shadow-sm lg:grid-cols-[0.9fr_1.1fr] lg:p-10">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.35em] text-rust-500">About the company</p>
@@ -112,7 +117,7 @@ function App() {
           </div>
         </section>
 
-        <section id="products" className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <section id="products" data-aos="fade-up" className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <div className="flex items-end justify-between gap-6">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.35em] text-rust-500">Product range</p>
@@ -122,7 +127,11 @@ function App() {
 
           <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {categories.map((category, index) => (
-              <article key={category.title} className="group overflow-hidden rounded-[1.75rem] border border-olive-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-soft">
+              <article
+                key={category.title}
+                data-aos={index % 2 === 0 ? 'fade-right' : 'fade-left'}
+                className="group overflow-hidden rounded-[1.75rem] border border-olive-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-soft"
+              >
                 <div className={`h-44 bg-gradient-to-br ${index % 2 === 0 ? 'from-olive-600 via-olive-400 to-rust-200' : 'from-rust-600 via-rust-400 to-olive-200'}`} />
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-olive-900">{category.title}</h3>
@@ -133,9 +142,9 @@ function App() {
           </div>
         </section>
 
-        <section id="contact" className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+        <section id="contact" data-aos="fade-up" className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
           <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
-            <div className="rounded-[2rem] border border-rust-200 bg-white p-8 shadow-sm">
+            <div data-aos="fade-right" className="rounded-[2rem] border border-rust-200 bg-white p-8 shadow-sm">
               <div className="border-t-4 border-rust-500 pt-8">
                 <div className="space-y-8 text-olive-700">
                   <div>
@@ -188,13 +197,54 @@ function App() {
               </div>
             </div>
 
-            <div className="rounded-[2rem] border border-rust-200 bg-white p-8 shadow-sm">
+            <div data-aos="fade-left" className="rounded-[2rem] border border-rust-200 bg-white p-8 shadow-sm">
               <div className="border-t-4 border-rust-500 pt-8">
-                <p className="text-sm font-semibold uppercase tracking-[0.35em] text-rust-500">Image space</p>
-                <h2 className="mt-4 text-3xl font-black text-olive-900">Keep a banner or product image here.</h2>
-                <div className="mt-8 flex min-h-[520px] items-center justify-center rounded-[1.5rem] border-2 border-dashed border-olive-300 bg-white text-center text-sm font-medium text-olive-600">
-                  Space for company image, product photo, or certificate
-                </div>
+                <p className="text-sm font-semibold uppercase tracking-[0.35em] text-rust-500">Contact Us</p>
+                <h2 className="mt-4 text-3xl font-black text-olive-900">Send us a message</h2>
+
+                <form
+                  onSubmit={(e) => { e.preventDefault(); alert('Message sent — thank you!'); e.target.reset(); }}
+                  className="mt-8 space-y-4"
+                >
+                  <div className="grid gap-4 sm:grid-cols-2">
+                    <input
+                      name="name"
+                      required
+                      placeholder="Name"
+                      className="rounded-lg border border-olive-200 px-4 py-3 text-sm w-full"
+                    />
+                    <input
+                      name="email"
+                      type="email"
+                      required
+                      placeholder="Email"
+                      className="rounded-lg border border-olive-200 px-4 py-3 text-sm w-full"
+                    />
+                  </div>
+
+                  <input
+                    name="subject"
+                    placeholder="Subject"
+                    className="rounded-lg border border-olive-200 px-4 py-3 text-sm w-full"
+                  />
+
+                  <textarea
+                    name="message"
+                    required
+                    placeholder="Your message"
+                    rows={5}
+                    className="w-full rounded-lg border border-olive-200 px-4 py-3 text-sm"
+                  />
+
+                  <div className="flex justify-end">
+                    <button
+                      type="submit"
+                      className="rounded bg-rust-500 px-6 py-3 text-sm font-semibold text-white hover:bg-rust-600"
+                    >
+                      Send Message
+                    </button>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
