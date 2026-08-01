@@ -152,112 +152,161 @@ function App() {
 
         <section id="contact" data-aos="fade-up" className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
           <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
-            <div data-aos="fade-right" className="rounded-[2rem] border border-rust-200 bg-white p-8 shadow-sm">
-              <div className="border-t-4 border-rust-500 pt-8">
-                <div className="space-y-8 text-olive-700">
-                  <div>
-                    <p className="text-2xl font-semibold text-olive-800">Location:</p>
-                    <p className="mt-2 leading-7">
-                      1st Floor, D 1, Shree Nag, Khairani Rd, Saki Naka, Mumbai, Mumbai, Mumbai, Maharashtra, India, 400072
-                    </p>
-                  </div>
+            <div data-aos="fade-right" className="relative rounded-[2rem] overflow-hidden border border-rust-200 shadow-sm">
+              <div
+                className="absolute inset-0"
+                style={{
+                  backgroundImage: `url(${companyImg})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat',
+                }}
+              />
 
-                  <div>
-                    <p className="text-2xl font-semibold text-olive-800">Email:</p>
-                    <a className="mt-2 block text-sky-600 hover:underline" href="mailto:vishwakarmapranav19@gmail.com">
-                      vishwakarmapranav19@gmail.com
-                    </a>
-                  </div>
+              <div className="absolute inset-0 bg-black/45" />
 
-                  <div>
-                    <p className="text-2xl font-semibold text-olive-800">Call:</p>
-                    <a className="mt-2 block text-sky-600 hover:underline" href="tel:8692903905">
-                      8692903905
-                    </a>
-                  </div>
+              <div className="relative p-8">
+                <div className="border-t-4 border-rust-500 pt-8">
+                  <div className="space-y-8 text-white">
+                    <div>
+                      <p className="text-2xl font-semibold">Location:</p>
+                      <p className="mt-2 leading-7">
+                        1st Floor, D 1, Shree Nag, Khairani Rd, Saki Naka, Mumbai, Mumbai, Mumbai, Maharashtra, India, 400072
+                      </p>
+                    </div>
 
-                  <div>
-                    <p className="text-2xl font-semibold text-olive-800">Map:</p>
-                    <a
-                      className="mt-2 inline-flex items-center rounded-full bg-rust-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-rust-600"
-                      href="https://www.google.com/maps/search/1st+Floor,+D+1,+Shree+Nag,+Khairani+Rd,+Saki+Naka,+Mumbai,+Mumbai,+Mumbai,+Maharashtra,+India,+400072/@19.0988618,72.8826526,16z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MDcyOC4wIKXMDSoASAFQAw%3D%3D"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Open in Maps
-                    </a>
+                    <div>
+                      <p className="text-2xl font-semibold">Email:</p>
+                      <a className="mt-2 block text-sky-200 hover:underline" href="mailto:vishwakarmapranav19@gmail.com">
+                        vishwakarmapranav19@gmail.com
+                      </a>
+                    </div>
 
-                    <a
-                      href="https://www.google.com/maps/search/1st+Floor,+D+1,+Shree+Nag,+Khairani+Rd,+Saki+Naka,+Mumbai,+Mumbai,+Mumbai,+Maharashtra,+India,+400072/@19.0988618,72.8826526,16z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MDcyOC4wIKXMDSoASAFQAw%3D%3D"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="mt-5 block overflow-hidden rounded-[1.5rem] border border-olive-200 bg-olive-50 transition hover:-translate-y-0.5 hover:shadow-md"
-                      aria-label="Open map location in Google Maps"
-                    >
-                      <img
-                        src={locImg}
-                        alt="Google map location preview"
-                        className="h-[340px] w-full object-cover"
-                      />
-                    </a>
+                    <div>
+                      <p className="text-2xl font-semibold">Call:</p>
+                      <a className="mt-2 block text-sky-200 hover:underline" href="tel:8692903905">
+                        8692903905
+                      </a>
+                    </div>
+
+                    <div>
+                      <p className="text-2xl font-semibold">Map:</p>
+                      <a
+                        className="mt-2 inline-flex items-center rounded-full bg-rust-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-rust-600"
+                        href="https://www.google.com/maps/search/1st+Floor,+D+1,+Shree+Nag,+Khairani+Rd,+Saki+Naka,+Mumbai,+Mumbai,+Mumbai,+Maharashtra,+India,+400072/@19.0988618,72.8826526,16z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MDcyOC4wIKXMDSoASAFQAw%3D%3D"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Open in Maps
+                      </a>
+
+                      <a
+                        href="https://www.google.com/maps/search/1st+Floor,+D+1,+Shree+Nag,+Khairani+Rd,+Saki+Naka,+Mumbai,+Mumbai,+Mumbai,+Maharashtra,+India,+400072/@19.0988618,72.8826526,16z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MDcyOC4wIKXMDSoASAFQAw%3D%3D"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="mt-5 block overflow-hidden rounded-[1.5rem] border border-olive-200 bg-white/20 transition hover:-translate-y-0.5 hover:shadow-md"
+                        aria-label="Open map location in Google Maps"
+                      >
+                        <img
+                          src={locImg}
+                          alt="Google map location preview"
+                          className="h-[340px] w-full object-cover"
+                        />
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div data-aos="fade-left" className="rounded-[2rem] border border-rust-200 bg-white p-8 shadow-sm">
-              <div className="border-t-4 border-rust-500 pt-8">
-                <p className="text-sm font-semibold uppercase tracking-[0.35em] text-rust-500">Contact Us</p>
-                <h2 className="mt-4 text-3xl font-black text-olive-900">Send us a message</h2>
+            <div data-aos="fade-left" className="relative rounded-[2rem] overflow-hidden border border-rust-200 shadow-sm">
+              <div
+                className="absolute inset-0"
+                style={{
+                  backgroundImage: `url(${companyImg})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat',
+                }}
+              />
 
-                <form
-                  onSubmit={(e) => { e.preventDefault(); alert('Message sent — thank you!'); e.target.reset(); }}
-                  className="mt-8 space-y-4"
-                >
-                  <div className="grid gap-4 sm:grid-cols-2">
+              <div className="absolute inset-0 bg-black/45" />
+
+              <div className="relative p-8">
+                <div className="border-t-4 border-rust-500 pt-8">
+                  <p className="text-sm font-semibold uppercase tracking-[0.35em] text-white">Contact Us</p>
+                  <h2 className="mt-4 text-3xl font-black text-white">Send us a message</h2>
+
+                  <form
+                    onSubmit={(e) => { e.preventDefault(); alert('Message sent — thank you!'); e.target.reset(); }}
+                    className="mt-8 space-y-4"
+                  >
+                    <div className="grid gap-4 sm:grid-cols-2">
+                      <input
+                        name="name"
+                        required
+                        placeholder="Name"
+                        className="rounded-lg border border-olive-200 bg-white/95 px-4 py-3 text-sm w-full text-black"
+                      />
+                      <input
+                        name="email"
+                        type="email"
+                        required
+                        placeholder="Email"
+                        className="rounded-lg border border-olive-200 bg-white/95 px-4 py-3 text-sm w-full text-black"
+                      />
+                    </div>
+
                     <input
-                      name="name"
-                      required
-                      placeholder="Name"
-                      className="rounded-lg border border-olive-200 px-4 py-3 text-sm w-full"
+                      name="subject"
+                      placeholder="Subject"
+                      className="rounded-lg border border-olive-200 bg-white/95 px-4 py-3 text-sm w-full text-black"
                     />
-                    <input
-                      name="email"
-                      type="email"
+
+                    <textarea
+                      name="message"
                       required
-                      placeholder="Email"
-                      className="rounded-lg border border-olive-200 px-4 py-3 text-sm w-full"
+                      placeholder="Your message"
+                      rows={5}
+                      className="w-full rounded-lg border border-olive-200 bg-white/95 px-4 py-3 text-sm text-black"
                     />
-                  </div>
 
-                  <input
-                    name="subject"
-                    placeholder="Subject"
-                    className="rounded-lg border border-olive-200 px-4 py-3 text-sm w-full"
-                  />
-
-                  <textarea
-                    name="message"
-                    required
-                    placeholder="Your message"
-                    rows={5}
-                    className="w-full rounded-lg border border-olive-200 px-4 py-3 text-sm"
-                  />
-
-                  <div className="flex justify-end">
-                    <button
-                      type="submit"
-                      className="rounded bg-rust-500 px-6 py-3 text-sm font-semibold text-white hover:bg-rust-600"
-                    >
-                      Send Message
-                    </button>
-                  </div>
-                </form>
+                    <div className="flex justify-end">
+                      <button
+                        type="submit"
+                        className="rounded bg-rust-500 px-6 py-3 text-sm font-semibold text-white hover:bg-rust-600"
+                      >
+                        Send Message
+                      </button>
+                    </div>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
         </section>
       </main>
+      
+      <footer className="mt-12">
+        <div className="relative">
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `url(${companyImg})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+            }}
+          />
+
+          <div className="absolute inset-0 bg-black/40" />
+
+          <div className="relative z-10 mx-auto max-w-7xl px-4 py-12 text-center text-white">
+            <p className="text-sm font-semibold uppercase tracking-wider">Shahanawaz Food and Agro LLP</p>
+            <p className="mt-2 text-base">Processing • Packaging • Export | Quality Agro Products</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
