@@ -12,33 +12,33 @@ import dsdImg from './dsd.jpg';
 
 const categories = [
   {
-    title: 'Premium Grains',
-    description: 'Carefully sourced rice, wheat, and pulses with clean processing and consistent supply.',
+    title: 'Hydrological Cycle:',
+    description: 'Hydrological Cycle: Solar energy drives evaporation and transpiration, continuously producing freshwater through natural atmospheric precipitation.',
     image: grainsImg,
   },
   {
-    title: 'Spices & Masalas',
-    description: 'Rich aroma, bold flavor, and dependable quality for domestic and bulk distribution.',
+    title: 'Surface & Ground Extraction',
+    description: 'Lakes, rivers, and aquifers serve as primary sources, pumped into facilities for bulk processing.',
     image: bottlesImg,
   },
   {
-    title: 'Edible Oils',
-    description: 'Refined and packaged oils designed for kitchens, wholesalers, and retailers.',
+    title: 'Advanced Desalination:',
+    description: 'Advanced Desalination: Reverse osmosis turns seawater into potable water by removing dissolved salts under high pressure.',
     image: bottleRow,
   },
   {
-    title: 'Agro Supply Chain',
-    description: 'Farm-to-market logistics and distribution support built for reliability.',
+    title: 'Treatment Processes',
+    description: 'Treatment Processes: Raw water undergoes coagulation, filtration, and disinfection to eliminate contaminants and pathogens.',
     image: factoryImg,
   },
   {
-    title: 'Logistics & Warehousing',
-    description: 'Efficient storage, transportation, and last-mile distribution for bulk goods.',
+    title: 'Atmospheric Generation:',
+    description: 'Atmospheric Generation: Innovative harvesting units extract moisture directly from ambient air to supply arid regions.',
     image: dsdImg,
   },
   {
-    title: 'Packaging & Quality',
-    description: 'Modern packing solutions and QA checks to preserve product integrity.',
+    title: 'Water Recycling',
+    description: 'Water Recycling: Modern reclamation systems treat wastewater to advanced standards, creating high-quality recycled water.',
     image: bottleRow,
   },
 ];
@@ -137,7 +137,6 @@ function App() {
               <p className="mb-3"><strong>LLPIN:</strong> ACC-8528</p>
               <p className="mb-3"><strong>Last updated:</strong> 05-06-2026</p>
               <p className="mb-3">SHAHNAWAZ FOODS AND AGRO LLP having LLPIN <strong>ACC-8528</strong> is <strong>2 years, 10 months &amp; 26 days</strong> old, incorporated with MCA on <strong>5th September, 2023</strong>. The company is registered at Registrar of Companies (ROC), RoC-Mumbai I with a paid-up capital of <strong>₹1,00,000</strong>.</p>
-              <p className="mb-3">The company has <strong>2</strong> partners/designated partners/key management personnel: <a className="text-sky-600 hover:underline" href="https://www.falconebiz.com/director/06627895/DILNAWAZ-ALI-JARRAR-SIDDIQUI" target="_blank" rel="noreferrer">DILNAWAZ ALI JARRAR SIDDIQUI</a>, <a className="text-sky-600 hover:underline" href="https://www.falconebiz.com/director/10307693/FARDEEN-ALI-JARRAR-SIDDIQUI" target="_blank" rel="noreferrer">FARDEEN ALI JARRAR SIDDIQUI</a>.</p>
               <p className="mb-3">Registered office address: <strong>1st Floor, D 1, Shree Nag, Khairani Rd, Saki Naka, Mumbai, Mumbai, Mumbai, Maharashtra, India</strong>, <a className="text-sky-600 hover:underline" href="https://www.falconebiz.com/company/400072.html" target="_blank" rel="noreferrer">400072</a>.</p>
               <p className="mb-0"><strong>Current status:</strong> Active.</p>
             </div>
