@@ -4,23 +4,42 @@ import 'aos/dist/aos.css';
 import logoImg from '../ChatGPT Image Jul 31, 2026, 01_42_37 PM.png';
 import locImg from '../loc.png';
 import companyImg from '../Gemini_Generated_Image_r73yrfr73yrfr73y.png';
+import grainsImg from './202211EX05_0110_ret.avif';
+import bottlesImg from './gg.avif';
+import bottleRow from './bottle.webp';
+import factoryImg from './es.jpg';
+import dsdImg from './dsd.jpg';
 
 const categories = [
   {
     title: 'Premium Grains',
     description: 'Carefully sourced rice, wheat, and pulses with clean processing and consistent supply.',
+    image: grainsImg,
   },
   {
     title: 'Spices & Masalas',
     description: 'Rich aroma, bold flavor, and dependable quality for domestic and bulk distribution.',
+    image: bottlesImg,
   },
   {
     title: 'Edible Oils',
     description: 'Refined and packaged oils designed for kitchens, wholesalers, and retailers.',
+    image: bottleRow,
   },
   {
     title: 'Agro Supply Chain',
     description: 'Farm-to-market logistics and distribution support built for reliability.',
+    image: factoryImg,
+  },
+  {
+    title: 'Logistics & Warehousing',
+    description: 'Efficient storage, transportation, and last-mile distribution for bulk goods.',
+    image: dsdImg,
+  },
+  {
+    title: 'Packaging & Quality',
+    description: 'Modern packing solutions and QA checks to preserve product integrity.',
+    image: bottleRow,
   },
 ];
 
@@ -140,7 +159,13 @@ function App() {
                 data-aos={index % 2 === 0 ? 'fade-right' : 'fade-left'}
                 className="group overflow-hidden rounded-[1.75rem] border border-olive-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-soft"
               >
-                <div className={`h-44 bg-gradient-to-br ${index % 2 === 0 ? 'from-olive-600 via-olive-400 to-rust-200' : 'from-rust-600 via-rust-400 to-olive-200'}`} />
+                {category.image ? (
+                  <div className="h-44 overflow-hidden">
+                    <img src={category.image} alt={category.title} className="w-full h-full object-cover" />
+                  </div>
+                ) : (
+                  <div className={`h-44 bg-gradient-to-br ${index % 2 === 0 ? 'from-olive-600 via-olive-400 to-rust-200' : 'from-rust-600 via-rust-400 to-olive-200'}`} />
+                )}
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-olive-900">{category.title}</h3>
                   <p className="mt-3 text-sm leading-7 text-olive-700">{category.description}</p>
