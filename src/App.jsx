@@ -51,7 +51,7 @@ function App() {
     AOS.init({ duration: 800, easing: 'ease-out-cubic', once: true });
   }, []);
   return (
-    <div className="min-h-screen bg-[radial-gradient(circle_at_top,_rgba(142,160,63,0.22),_transparent_38%),linear-gradient(180deg,#f8f6ef_0%,#f3f0e7_100%)] text-olive-900">
+    <div className="min-h-screen bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.12),_transparent_38%),linear-gradient(180deg,#eaf6ff_0%,#e0f2ff_100%)] text-sky-900">
       <header data-aos="fade-down" className="sticky top-0 z-30 border-b bg-white/80 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-4">
@@ -77,9 +77,9 @@ function App() {
           <div className="grid h-[56vh] items-center gap-8 lg:grid-cols-2">
             <div className="flex flex-col justify-center">
               <h1 className="text-5xl font-extrabold leading-tight text-olive-900 md:text-6xl">
-                Your <span className="text-amber-400">VISION</span>
+                Your <span className="text-amber-400">TRUST</span>
                 <br />
-                Our <span className="text-amber-400">TECHNOLOGY</span>
+                Our <span className="text-amber-400">PRODUCT</span>
               </h1>
               <p className="mt-6 max-w-xl text-lg text-olive-700">
                 Shahanawaz Food and Agro LLP presents grains, spices, oils, and agro products with a bold,
