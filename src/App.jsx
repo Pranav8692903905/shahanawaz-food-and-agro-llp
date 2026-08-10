@@ -9,6 +9,7 @@ import bottlesImg from './gg.avif';
 import bottleRow from './bottle.webp';
 import factoryImg from './es.jpg';
 import dsdImg from './dsd.jpg';
+import promoImg from './ChatGPT Image Aug 10, 2026, 03_37_14 PM.png';
 
 const categories = [
   {
@@ -93,17 +94,34 @@ function App() {
 
       <main>
         <section data-aos="fade-up" className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-          <div className="grid h-[56vh] items-center gap-8 lg:grid-cols-2">
+          <div className="grid min-h-[56vh] items-start gap-8 lg:grid-cols-2">
             <div className="flex flex-col justify-center">
               <h1 className="text-5xl font-extrabold leading-tight text-olive-900 md:text-6xl">
                 Your <span className="text-amber-400">TRUST</span>
                 <br />
                 Our <span className="text-amber-400">PRODUCT</span>
               </h1>
-              <p className="mt-6 max-w-xl text-lg text-olive-700">
-                Shahanawaz Food and Agro LLP presents grains, spices, oils, and agro products with a bold,
-                modern presentation that emphasises trust and clarity.
-              </p>
+              <div className="mt-6 max-w-xl text-lg text-olive-700 space-y-4">
+                <div>
+                  <h3 className="text-2xl font-bold">💧 <span className="align-middle">PURE QUALITY</span></h3>
+                  <p className="mt-2">Advanced purification &amp; strict quality checks.</p>
+                </div>
+
+                <div>
+                  <h3 className="text-2xl font-bold">🛡️ <span className="align-middle">TRUSTED HYGIENE</span></h3>
+                  <p className="mt-2">Hygienic handling and secure packaging.</p>
+                </div>
+
+                <div>
+                  <h3 className="text-2xl font-bold">🚚 <span className="align-middle">WIDE REACH</span></h3>
+                  <p className="mt-2">Reliable distribution from Mumbai across India.</p>
+                </div>
+
+                <div>
+                  <h3 className="text-2xl font-bold">🤝 <span className="align-middle">CUSTOMER FIRST</span></h3>
+                  <p className="mt-2">Quality and satisfaction at every step.</p>
+                </div>
+              </div>
               <a
                 href="#contact"
                 className="mt-8 inline-block rounded bg-rust-500 px-6 py-3 text-sm font-semibold text-white shadow-soft hover:bg-rust-600"
@@ -133,11 +151,18 @@ function App() {
               </div>
             </div>
 
-            <div className="text-base leading-7 text-olive-700">
-              <p className="mb-3"><strong>LLPIN:</strong> ACC-8528</p>
-              <p className="mb-3"><strong>Last updated:</strong> 05-06-2026</p>
-              <p className="mb-3">SHAHNAWAZ FOODS AND AGRO LLP having LLPIN <strong>ACC-8528</strong> is <strong>2 years, 10 months &amp; 26 days</strong> old, incorporated with MCA on <strong>5th September, 2023</strong>. The company is registered at Registrar of Companies (ROC), RoC-Mumbai I with a paid-up capital of <strong>₹1,00,000</strong>.</p>
-              <p className="mb-3">Registered office address: <strong>1st Floor, D 1, Shree Nag, Khairani Rd, Saki Naka, Mumbai, Mumbai, Mumbai, Maharashtra, India</strong>, <a className="text-sky-600 hover:underline" href="https://www.falconebiz.com/company/400072.html" target="_blank" rel="noreferrer">400072</a>.</p>
+            <div className="text-base leading-7 text-olive-700 space-y-3 break-words">
+              <p className="mb-0"><strong>It was established in :</strong> 05-10-2023</p>
+
+              <p className="mb-0">
+                <strong>SHAHNAWAZ FOODS AND AGRO LLP</strong>  <strong></strong> is <strong>2 years, 10 months &amp; 26 days</strong> old, incorporated with MCA on <strong>5th September, 2023</strong>.
+              </p>
+
+              <p className="mb-0">
+                Registered office address: <strong>1st Floor, D 1, Shree Nag, Khairani Rd, Saki Naka, Mumbai, Mumbai, Mumbai, Maharashtra, India</strong>,
+                <a className="ml-1 text-sky-600 hover:underline" href="https://www.falconebiz.com/company/400072.html" target="_blank" rel="noreferrer">400072</a>.
+              </p>
+
               <p className="mb-0"><strong>Current status:</strong> Active.</p>
             </div>
           </div>
@@ -151,26 +176,35 @@ function App() {
             </div>
           </div>
 
-          <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {categories.map((category, index) => (
-              <article
-                key={category.title}
-                data-aos={index % 2 === 0 ? 'fade-right' : 'fade-left'}
-                className="group overflow-hidden rounded-[1.75rem] border border-olive-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-soft"
-              >
-                {category.image ? (
-                  <div className="h-44 overflow-hidden">
-                    <img src={category.image} alt={category.title} className="w-full h-full object-cover" />
-                  </div>
-                ) : (
-                  <div className={`h-44 bg-gradient-to-br ${index % 2 === 0 ? 'from-olive-600 via-olive-400 to-rust-200' : 'from-rust-600 via-rust-400 to-olive-200'}`} />
-                )}
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-olive-900">{category.title}</h3>
-                  <p className="mt-3 text-sm leading-7 text-olive-700">{category.description}</p>
+          <div className="mt-8">
+            <div className="grid gap-8 items-stretch md:grid-cols-2">
+              <div className="flex items-stretch justify-center">
+                <div className="w-full overflow-hidden rounded-[1.5rem] border border-olive-200 bg-white shadow-sm h-full">
+                  <img src={promoImg} alt="Promotional" className="w-full h-full object-cover" />
                 </div>
-              </article>
-            ))}
+              </div>
+
+              <div className="text-olive-800 flex flex-col justify-center">
+                <h2 className="text-3xl font-extrabold text-olive-900">Pure Water. Trusted Everywhere.</h2>
+                <p className="mt-4 text-lg">
+                  We believe that every drop should reflect purity, quality, and trust.
+                </p>
+
+                <p className="mt-4">
+                  We are committed to delivering high-quality drinking water that meets the expectations of modern consumers and businesses. From careful purification and quality control to secure packaging and reliable distribution, we focus on maintaining excellence at every stage.
+                </p>
+
+                <p className="mt-4">
+                  Our vision goes beyond producing water — <strong>we aim to make pure, safe and refreshing hydration accessible wherever it is needed.</strong>
+                </p>
+
+                <p className="mt-4 font-semibold">With a commitment to quality, consistency, and customer satisfaction, we continue to expand our reach from <strong>Mumbai to different parts of India</strong>, bringing trusted water closer to every customer.</p>
+
+                <p className="mt-6 text-xl font-black">“From Source to Seal, Pure Quality.”</p>
+
+                <p className="mt-2">Pure in every drop. Trusted in every bottle. Delivered with care.</p>
+              </div>
+            </div>
           </div>
         </section>
 
