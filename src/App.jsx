@@ -108,16 +108,6 @@ function App() {
                 </div>
 
                 <div>
-                  <h3 className="text-2xl font-bold">🛡️ <span className="align-middle">TRUSTED HYGIENE</span></h3>
-                  <p className="mt-2">Hygienic handling and secure packaging.</p>
-                </div>
-
-                <div>
-                  <h3 className="text-2xl font-bold">🚚 <span className="align-middle">WIDE REACH</span></h3>
-                  <p className="mt-2">Reliable distribution from Mumbai across India.</p>
-                </div>
-
-                <div>
                   <h3 className="text-2xl font-bold">🤝 <span className="align-middle">CUSTOMER FIRST</span></h3>
                   <p className="mt-2">Quality and satisfaction at every step.</p>
                 </div>
