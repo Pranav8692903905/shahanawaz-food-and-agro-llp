@@ -158,43 +158,42 @@ function App() {
           </div>
         </section>
 
-        <section id="products" data-aos="fade-up" className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-          <div className="flex items-end justify-between gap-6">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.35em] text-rust-500">Product range</p>
-              <h2 className="mt-3 text-3xl font-black text-olive-900">A practical structure for images and product cards.</h2>
-            </div>
+        <section id="products" data-aos="fade-up" className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <p className="text-3xl font-light tracking-wide text-[#b9b0a8] md:text-4xl">Our Services</p>
+            <div className="mx-auto mt-2 h-[3px] w-24 bg-[#e76b39]" />
           </div>
 
-          <div className="mt-8">
-            <div className="grid gap-8 items-stretch md:grid-cols-2">
-              <div className="flex items-stretch justify-center">
-                <div className="w-full overflow-hidden rounded-[1.5rem] border border-olive-200 bg-white shadow-sm h-full">
-                  <img src={promoImg} alt="Promotional" className="w-full h-full object-cover" />
-                </div>
+          <div className="mt-10 text-center">
+            <h2 className="text-5xl font-black leading-none tracking-tight text-[#0f2d73] md:text-[8rem]">WATER</h2>
+            <h3 className="mt-1 text-4xl font-black leading-none tracking-tight text-[#e76b39] md:text-[6rem]">PRODUCTION</h3>
+            <h4 className="mt-2 text-4xl font-black leading-none tracking-tight text-[#0f2d73] md:text-[5rem]">SERVICES</h4>
+            <p className="mt-6 text-xl font-light italic text-[#0f2d73] md:text-[2.2rem]">
+              RO Water, Mineral Water &amp; Packaged Drinking Water
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-4 md:grid-cols-3">
+            {[
+              'End to End Water Plant Set Up',
+              'New Product and Formulation Development',
+              'Plant Laboratory Set-Up',
+              'Assistance for legal compliances',
+              'Detailed Technical Evaluation of Vendors',
+              'Assistance in Contract Manufacturing',
+              'Water Safety Certification &amp; Approvals',
+              'Chemical Distribution',
+              'On-Site and Off-Site Support',
+            ].map((service, index) => (
+              <div
+                key={service}
+                className={`flex min-h-[84px] items-center justify-center px-5 py-4 text-center text-base font-semibold leading-tight shadow-sm md:text-lg ${
+                  index % 3 === 0 || index % 3 === 2 ? 'bg-[#0f2d73] text-white' : 'bg-[#e76b39] text-white'
+                }`}
+              >
+                {service}
               </div>
-
-              <div className="text-olive-800 flex flex-col justify-center">
-                <h2 className="text-3xl font-extrabold text-olive-900">Pure Water. Trusted Everywhere.</h2>
-                <p className="mt-4 text-lg">
-                  We believe that every drop should reflect purity, quality, and trust.
-                </p>
-
-                <p className="mt-4">
-                  We are committed to delivering high-quality drinking water that meets the expectations of modern consumers and businesses. From careful purification and quality control to secure packaging and reliable distribution, we focus on maintaining excellence at every stage.
-                </p>
-
-                <p className="mt-4">
-                  Our vision goes beyond producing water — <strong>we aim to make pure, safe and refreshing hydration accessible wherever it is needed.</strong>
-                </p>
-
-                <p className="mt-4 font-semibold">With a commitment to quality, consistency, and customer satisfaction, we continue to expand our reach from <strong>Mumbai to different parts of India</strong>, bringing trusted water closer to every customer.</p>
-
-                <p className="mt-6 text-xl font-black">“From Source to Seal, Pure Quality.”</p>
-
-                <p className="mt-2">Pure in every drop. Trusted in every bottle. Delivered with care.</p>
-              </div>
-            </div>
+            ))}
           </div>
         </section>
 
