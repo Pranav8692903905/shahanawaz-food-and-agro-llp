@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import logoImg from '../ChatGPT Image Jul 31, 2026, 01_42_37 PM.png';
@@ -67,27 +67,85 @@ const products = [
 ];
 
 function App() {
+  const [showWebsite, setShowWebsite] = useState(false);
+  const [showDetails, setShowDetails] = useState(false);
+
   useEffect(() => {
     AOS.init({ duration: 800, easing: 'ease-out-cubic', once: true });
   }, []);
+
+  if (!showWebsite) {
+    return (
+      <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#061a3a] px-5 py-12 text-white sm:px-8">
+        <div className="absolute inset-0 opacity-30 [background-image:radial-gradient(rgba(147,197,253,0.35)_1px,transparent_1px)] [background-size:24px_24px]" />
+        <div className="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-blue-500/20 blur-3xl" />
+        <div className="absolute -bottom-32 -right-20 h-96 w-96 rounded-full bg-cyan-400/10 blur-3xl" />
+
+        <section className="relative z-10 w-full max-w-4xl text-center" data-aos="fade-up">
+          <div className="mx-auto flex h-24 w-24 items-center justify-center overflow-hidden rounded-full border border-blue-200/30 bg-white p-2 shadow-2xl shadow-blue-950/50 sm:h-28 sm:w-28">
+            <img src={logoImg} alt="Shahanawaz Food and Agro LLP logo" className="h-full w-full object-contain" />
+          </div>
+          <p className="mt-8 text-xs font-semibold uppercase tracking-[0.35em] text-blue-200 sm:text-sm">Quality • Trust • Growth</p>
+          <h1 className="mt-5 text-4xl font-black leading-tight tracking-tight sm:text-6xl md:text-7xl">
+            Welcome to<br />
+            <span className="text-blue-200">Shahanawaz Food and Agro LLP</span>
+          </h1>
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-blue-100/80 sm:text-lg">
+            Connecting quality food and agro products with the people and businesses who value them.
+          </p>
+
+          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <button
+              type="button"
+              onClick={() => setShowDetails((current) => !current)}
+              className="w-full rounded-full border border-blue-200/50 px-8 py-3.5 text-sm font-bold text-blue-100 transition hover:border-white hover:bg-white/10 sm:w-auto"
+            >
+              {showDetails ? 'Hide Details' : 'Learn More'}
+            </button>
+            <button
+              type="button"
+              onClick={() => setShowWebsite(true)}
+              className="w-full rounded-full bg-white px-8 py-3.5 text-sm font-bold text-[#061a3a] shadow-xl shadow-blue-950/40 transition hover:-translate-y-0.5 hover:bg-blue-100 sm:w-auto"
+            >
+              Main Website
+            </button>
+          </div>
+
+          {showDetails && (
+            <div className="mx-auto mt-8 max-w-xl rounded-2xl border border-blue-200/20 bg-white/10 px-6 py-5 text-sm leading-6 text-blue-50 backdrop-blur-sm">
+              We work across food, agro products, packaging, and water production services with a focus on dependable quality and long-term partnerships.
+            </div>
+          )}
+        </section>
+      </main>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.12),_transparent_38%),linear-gradient(180deg,#eaf6ff_0%,#e0f2ff_100%)] text-sky-900">
-      <header data-aos="fade-down" className="sticky top-0 z-30 border-b bg-white/80 backdrop-blur-xl">
+      <header data-aos="fade-down" className="sticky top-0 z-30 border-b border-blue-400/30 bg-[#061a3a]/95 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-4">
             <div className="h-10 w-10 rounded-full bg-sky-100 flex items-center justify-center overflow-hidden">
               <img src={logoImg} alt="logo" className="w-full h-full object-contain p-1" />
             </div>
             <div>
-              <p className="text-lg font-bold text-sky-600">Shahanawaz Food and Agro LLP</p>
+              <p className="text-lg font-bold text-blue-100">Shahanawaz Food and Agro LLP</p>
             </div>
           </div>
 
           <nav aria-label="Primary" className="hidden md:flex md:items-center md:gap-6">
-            <a href="#" className="text-sm font-medium text-sky-600 hover:text-sky-800">Home</a>
-            <a href="#about" className="text-sm font-medium text-sky-600 hover:text-sky-800">About Us</a>
-            <a href="#clients" className="text-sm font-medium text-sky-600 hover:text-sky-800">Clients</a>
-            <a href="#contact" className="text-sm font-medium text-sky-600 hover:text-sky-800">Contact</a>
+            <a href="#" className="text-sm font-medium text-blue-100 hover:text-white">Home</a>
+            <a href="#about" className="text-sm font-medium text-blue-100 hover:text-white">About Us</a>
+            <a href="#clients" className="text-sm font-medium text-blue-100 hover:text-white">Clients</a>
+            <a href="#contact" className="text-sm font-medium text-blue-100 hover:text-white">Contact</a>
+            <button
+              type="button"
+              onClick={() => setShowWebsite(false)}
+              className="rounded-full border border-sky-200 px-4 py-2 text-sm font-semibold text-sky-700 transition hover:border-sky-400 hover:bg-sky-50"
+            >
+              Back
+            </button>
           </nav>
         </div>
       </header>
