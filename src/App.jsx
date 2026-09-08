@@ -10,6 +10,7 @@ import bottleRow from './bottle.webp';
 import factoryImg from './es.jpg';
 import dsdImg from './dsd.jpg';
 import promoImg from './ChatGPT Image Aug 10, 2026, 03_37_14 PM.png';
+import heroVideo from '../b_give_me_water_produc.mp4';
 
 const categories = [
   {
@@ -123,7 +124,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.12),_transparent_38%),linear-gradient(180deg,#eaf6ff_0%,#e0f2ff_100%)] text-sky-900">
-      <header data-aos="fade-down" className="sticky top-0 z-30 border-b border-blue-400/30 bg-[#061a3a]/95 backdrop-blur-xl">
+      <header data-aos="fade-down" className="relative z-10 sticky top-0 overflow-hidden border-b border-blue-400/30 bg-[#061a3a]/95 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-4">
             <div className="h-10 w-10 rounded-full bg-sky-100 flex items-center justify-center overflow-hidden">
@@ -150,9 +151,18 @@ function App() {
         </div>
       </header>
 
-      <main>
-        <section data-aos="fade-up" className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-          <div className="grid min-h-[56vh] items-start gap-8 lg:grid-cols-2">
+      <main className="relative z-10 overflow-hidden">
+        <video
+          className="pointer-events-none absolute inset-x-0 top-0 h-1/2 w-full object-cover opacity-45"
+          src={heroVideo}
+          autoPlay
+          muted
+          loop
+          playsInline
+          aria-hidden="true"
+        />
+        <section data-aos="fade-up" className="relative mx-auto max-w-7xl overflow-hidden px-4 py-8 sm:px-6 lg:px-8">
+          <div className="relative z-10 grid min-h-[56vh] items-start gap-8 lg:grid-cols-2">
             <div className="flex flex-col justify-center">
               <h1 className="text-5xl font-extrabold leading-tight text-olive-900 md:text-6xl">
                 Your <span className="text-amber-400">TRUST</span>
@@ -178,7 +188,7 @@ function App() {
               </a>
             </div>
 
-            <div data-aos="zoom-in" className="flex items-center justify-center">
+            <div data-aos="zoom-in" className="flex min-h-[360px] items-center justify-center">
               <div className="flex h-64 w-64 items-center justify-center overflow-hidden rounded-full bg-white shadow-md">
                 <img src={logoImg} alt="Company logo" className="h-full w-full object-contain" />
               </div>
@@ -392,7 +402,7 @@ function App() {
         </section>
       </main>
       
-      <footer className="mt-12">
+      <footer className="relative z-20 mt-12">
         <div className="relative">
           <div
             className="absolute inset-0"
