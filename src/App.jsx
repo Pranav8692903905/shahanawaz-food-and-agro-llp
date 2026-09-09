@@ -124,7 +124,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.12),_transparent_38%),linear-gradient(180deg,#eaf6ff_0%,#e0f2ff_100%)] text-sky-900">
-      <header data-aos="fade-down" className="relative z-10 sticky top-0 overflow-hidden border-b border-blue-400/30 bg-[#061a3a]/95 backdrop-blur-xl">
+      <header data-aos="fade-down" className="relative z-10 overflow-hidden border-b border-blue-400/30 bg-[#061a3a]/95 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-4">
             <div className="h-10 w-10 rounded-full bg-sky-100 flex items-center justify-center overflow-hidden">
