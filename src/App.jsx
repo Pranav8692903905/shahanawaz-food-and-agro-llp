@@ -4,6 +4,7 @@ import 'aos/dist/aos.css';
 import logoImg from '../ChatGPT Image Jul 31, 2026, 01_42_37 PM.png';
 import locImg from '../loc.png';
 import companyImg from '../Gemini_Generated_Image_r73yrfr73yrfr73y.png';
+import contactImg from '../contact.avif';
 import grainsImg from './202211EX05_0110_ret.avif';
 import bottlesImg from './gg.avif';
 import bottleRow from './bottle.webp';
@@ -67,13 +68,82 @@ const products = [
   'Custom wholesale packaging',
 ];
 
+const clientTypes = [
+  { number: '01', title: 'Retail partners', text: 'Reliable everyday supply for stores that care about quality and consistency.' },
+  { number: '02', title: 'Hospitality & catering', text: 'Flexible volumes and dependable fulfilment for kitchens working at scale.' },
+  { number: '03', title: 'Distributors', text: 'A responsive partner for regional distribution, private labels, and repeat orders.' },
+  { number: '04', title: 'Institutional buyers', text: 'Clear coordination and practical packaging for large, recurring requirements.' },
+];
+
+function InteriorHeader({ activePage, onNavigate }) {
+  const links = [['home', 'Home'], ['about', 'About'], ['clients', 'Clients'], ['contact', 'Contact']];
+  return (
+    <header className="border-b border-[#d9e1d1] bg-[#f8f8f3]/90 backdrop-blur-xl">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 sm:px-8">
+        <button type="button" onClick={() => onNavigate('home')} className="flex items-center gap-3 text-left">
+          <span className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-full border border-[#d9e1d1] bg-white p-1"><img src={logoImg} alt="Shahanawaz Food and Agro LLP logo" className="h-full w-full object-contain" /></span>
+          <span className="hidden text-sm font-bold tracking-[0.08em] text-[#173d35] sm:block">SHAHNAWAZ FOODS</span>
+        </button>
+        <nav aria-label="Page navigation" className="flex items-center gap-1 sm:gap-3">
+          {links.map(([key, label]) => <button key={key} type="button" onClick={() => onNavigate(key)} className={`rounded-full px-3 py-2 text-xs font-bold uppercase tracking-[0.12em] transition sm:px-4 ${activePage === key ? 'bg-[#173d35] text-white' : 'text-[#5c6c5a] hover:bg-[#e8eee2] hover:text-[#173d35]'}`}>{label}</button>)}
+        </nav>
+      </div>
+    </header>
+  );
+}
+
+function InteriorPage({ page, onNavigate }) {
+  const shared = `${page === 'contact' ? 'contact-page' : page === 'clients' ? 'client-page' : page === 'about' ? 'about-page' : 'bg-[#f8f8f3]'} min-h-screen text-[#173d35]`;
+  if (page === 'about') {
+    return (
+      <div className={shared}><InteriorHeader activePage={page} onNavigate={onNavigate} /><main>
+        <section className="mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:py-24">
+          <div><p className="text-xs font-bold uppercase tracking-[0.35em] text-[#c8622c]">Our foundation</p><h1 className="mt-5 max-w-3xl text-5xl font-black leading-[0.96] tracking-[-0.04em] text-[#173d35] sm:text-7xl">Good food starts with good relationships.</h1><p className="mt-7 max-w-xl text-lg leading-8 text-[#687565]">Shahanawaz Food and Agro LLP brings food, agro products, packaging, and production support together under one dependable partner.</p><div className="mt-10 grid max-w-xl grid-cols-3 border-y border-[#d9e1d1] py-5">{stats.map((stat) => <div key={stat.label} className="pr-3"><p className="text-3xl font-black text-[#c8622c]">{stat.value}</p><p className="mt-1 text-xs leading-5 text-[#687565]">{stat.label}</p></div>)}</div></div>
+          <div className="relative"><div className="absolute -bottom-5 -left-5 h-32 w-32 border-b border-l border-[#c8622c]" /><img src={companyImg} alt="Shahanawaz Food and Agro LLP premises" className="relative h-[430px] w-full object-cover grayscale-[15%]" /><div className="absolute bottom-5 left-5 bg-[#173d35] px-5 py-4 text-white"><p className="text-xs uppercase tracking-[0.25em] text-[#d2e1c3]">Established</p><p className="mt-1 text-2xl font-black">05.10.2023</p></div></div>
+        </section>
+        <section className="bg-[#173d35] text-white"><div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 sm:px-8 md:grid-cols-3"><div><p className="text-xs font-bold uppercase tracking-[0.3em] text-[#d2e1c3]">How we work</p><h2 className="mt-4 text-3xl font-black leading-tight">Built for steady, useful growth.</h2></div>{highlights.slice(0, 3).map((highlight, index) => <div key={highlight} className="border-t border-white/25 pt-5"><p className="text-4xl font-black text-[#c8622c]">0{index + 1}</p><p className="mt-4 text-lg font-bold">{highlight}</p><p className="mt-2 text-sm leading-6 text-[#d2e1c3]">Practical systems and people-first coordination at every step.</p></div>)}</div></section>
+      </main></div>
+    );
+  }
+  if (page === 'clients') {
+    return (
+      <div className={shared}><InteriorHeader activePage={page} onNavigate={onNavigate} /><main className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:py-24"><div className="max-w-3xl"><p className="text-xs font-bold uppercase tracking-[0.35em] text-[#c8622c]">Who we serve</p><h1 className="mt-5 text-5xl font-black leading-none tracking-[-0.04em] sm:text-7xl">Partners who keep things moving.</h1><p className="mt-7 max-w-xl text-lg leading-8 text-[#687565]">From growing retailers to established distribution networks, we make sourcing feel straightforward and human.</p></div><div className="mt-16 grid gap-px border border-[#d9e1d1] bg-[#d9e1d1] md:grid-cols-2">{clientTypes.map((client) => <article key={client.number} className="bg-[#f8f8f3] p-8 transition hover:bg-[#e9f0e2] sm:p-10"><p className="text-sm font-black text-[#c8622c]">{client.number}</p><h2 className="mt-12 text-2xl font-black">{client.title}</h2><p className="mt-3 max-w-sm leading-7 text-[#687565]">{client.text}</p><button type="button" onClick={() => onNavigate('contact')} className="mt-8 text-xs font-bold uppercase tracking-[0.18em] text-[#173d35] underline decoration-[#c8622c] underline-offset-8">Start a conversation</button></article>)}</div><section className="mt-16 grid gap-8 bg-[#c8622c] p-8 text-white sm:p-12 md:grid-cols-[1fr_auto] md:items-end"><div><p className="text-xs font-bold uppercase tracking-[0.3em] text-[#ffe0c9]">A better supply relationship</p><h2 className="mt-4 max-w-2xl text-3xl font-black sm:text-5xl">Your requirements deserve a partner who listens.</h2></div><button type="button" onClick={() => onNavigate('contact')} className="w-fit border border-white px-5 py-3 text-xs font-bold uppercase tracking-[0.15em] transition hover:bg-white hover:text-[#c8622c]">Talk to us</button></section></main></div>
+    );
+  }
+  if (page === 'contact') {
+    return (
+      <div className="contact-page min-h-screen text-[#173d35]"><InteriorHeader activePage="contact" onNavigate={onNavigate} /><main className="mx-auto grid max-w-7xl gap-14 bg-transparent px-5 py-16 sm:px-8 lg:grid-cols-[0.85fr_1.15fr] lg:py-24"><div><p className="text-xs font-bold uppercase tracking-[0.35em] text-[#c8622c]">Let&apos;s connect</p><h1 className="mt-5 text-5xl font-black leading-[0.96] tracking-[-0.04em] sm:text-7xl">Tell us what you need.</h1><p className="mt-7 max-w-md text-lg leading-8 text-[#687565]">Share a requirement, ask about our services, or simply say hello. We&apos;ll get back to you with a clear next step.</p><div className="mt-12 space-y-6 border-t border-[#d9e1d1] pt-7 text-sm"><div><p className="font-bold uppercase tracking-[0.15em] text-[#c8622c]">Visit</p><p className="mt-2 leading-6 text-[#687565]">1st Floor, D 1, Shree Nag, Khairani Rd,<br />Saki Naka, Mumbai 400072</p></div><div><p className="font-bold uppercase tracking-[0.15em] text-[#c8622c]">Reach us</p><a href="mailto:shahanazawfoodandagro@gmail.com" className="mt-2 block text-[#173d35] underline underline-offset-4">shahanazawfoodandagro@gmail.com</a><a href="https://www.instagram.com/flipsip_water" target="_blank" rel="noreferrer" className="mt-1 block text-[#173d35] underline underline-offset-4">Instagram: @flipsip_water</a><a href="tel:8692903905" className="mt-1 block text-[#173d35] underline underline-offset-4">8692903905</a></div></div></div><form onSubmit={(event) => { event.preventDefault(); alert('Message sent - thank you!'); event.target.reset(); }} className="border-t-4 border-[#c8622c] bg-white/95 p-6 shadow-[0_20px_60px_rgba(23,61,53,0.08)] sm:p-10"><div className="grid gap-6 sm:grid-cols-2"><label className="text-xs font-bold uppercase tracking-[0.15em] text-[#687565]">Name<input name="name" required className="mt-3 w-full border-b border-[#bfcbbb] bg-transparent px-0 py-3 text-base font-normal text-[#173d35] outline-none focus:border-[#c8622c]" placeholder="Your name" /></label><label className="text-xs font-bold uppercase tracking-[0.15em] text-[#687565]">Email<input name="email" type="email" required className="mt-3 w-full border-b border-[#bfcbbb] bg-transparent px-0 py-3 text-base font-normal text-[#173d35] outline-none focus:border-[#c8622c]" placeholder="you@company.com" /></label></div><label className="mt-7 block text-xs font-bold uppercase tracking-[0.15em] text-[#687565]">Subject<input name="subject" className="mt-3 w-full border-b border-[#bfcbbb] bg-transparent px-0 py-3 text-base font-normal text-[#173d35] outline-none focus:border-[#c8622c]" placeholder="How can we help?" /></label><label className="mt-7 block text-xs font-bold uppercase tracking-[0.15em] text-[#687565]">Message<textarea name="message" required rows={5} className="mt-3 w-full resize-none border-b border-[#bfcbbb] bg-transparent px-0 py-3 text-base font-normal text-[#173d35] outline-none focus:border-[#c8622c]" placeholder="Tell us a little about your requirement" /></label><button type="submit" className="mt-8 w-full bg-[#173d35] px-6 py-4 text-sm font-bold uppercase tracking-[0.15em] text-white transition hover:bg-[#c8622c]">Send message</button></form></main></div>
+    );
+  }
+  return (
+    <div className={shared} style={{ backgroundImage: `linear-gradient(rgba(248,248,243,0.78), rgba(248,248,243,0.88)), url(${contactImg})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}><InteriorHeader activePage="contact" onNavigate={onNavigate} /><main className="mx-auto grid max-w-7xl gap-14 bg-[#f8f8f3]/35 px-5 py-16 sm:px-8 lg:grid-cols-[0.85fr_1.15fr] lg:py-24"><div><p className="text-xs font-bold uppercase tracking-[0.35em] text-[#c8622c]">Let&apos;s connect</p><h1 className="mt-5 text-5xl font-black leading-[0.96] tracking-[-0.04em] sm:text-7xl">Tell us what you need.</h1><p className="mt-7 max-w-md text-lg leading-8 text-[#687565]">Share a requirement, ask about our services, or simply say hello. We&apos;ll get back to you with a clear next step.</p><div className="mt-12 space-y-6 border-t border-[#d9e1d1] pt-7 text-sm"><div><p className="font-bold uppercase tracking-[0.15em] text-[#c8622c]">Visit</p><p className="mt-2 leading-6 text-[#687565]">1st Floor, D 1, Shree Nag, Khairani Rd,<br />Saki Naka, Mumbai 400072</p></div><div><p className="font-bold uppercase tracking-[0.15em] text-[#c8622c]">Reach us</p><a href="mailto:vishwakarmapranav19@gmail.com" className="mt-2 block text-[#173d35] underline underline-offset-4">vishwakarmapranav19@gmail.com</a><a href="tel:8692903905" className="mt-1 block text-[#173d35] underline underline-offset-4">8692903905</a></div></div></div><form onSubmit={(event) => { event.preventDefault(); alert('Message sent - thank you!'); event.target.reset(); }} className="border-t-4 border-[#c8622c] bg-white/95 p-6 shadow-[0_20px_60px_rgba(23,61,53,0.08)] sm:p-10"><div className="grid gap-6 sm:grid-cols-2"><label className="text-xs font-bold uppercase tracking-[0.15em] text-[#687565]">Name<input name="name" required className="mt-3 w-full border-b border-[#bfcbbb] bg-transparent px-0 py-3 text-base font-normal text-[#173d35] outline-none focus:border-[#c8622c]" placeholder="Your name" /></label><label className="text-xs font-bold uppercase tracking-[0.15em] text-[#687565]">Email<input name="email" type="email" required className="mt-3 w-full border-b border-[#bfcbbb] bg-transparent px-0 py-3 text-base font-normal text-[#173d35] outline-none focus:border-[#c8622c]" placeholder="you@company.com" /></label></div><label className="mt-7 block text-xs font-bold uppercase tracking-[0.15em] text-[#687565]">Subject<input name="subject" className="mt-3 w-full border-b border-[#bfcbbb] bg-transparent px-0 py-3 text-base font-normal text-[#173d35] outline-none focus:border-[#c8622c]" placeholder="How can we help?" /></label><label className="mt-7 block text-xs font-bold uppercase tracking-[0.15em] text-[#687565]">Message<textarea name="message" required rows={5} className="mt-3 w-full resize-none border-b border-[#bfcbbb] bg-transparent px-0 py-3 text-base font-normal text-[#173d35] outline-none focus:border-[#c8622c]" placeholder="Tell us a little about your requirement" /></label><button type="submit" className="mt-8 w-full bg-[#173d35] px-6 py-4 text-sm font-bold uppercase tracking-[0.15em] text-white transition hover:bg-[#c8622c]">Send message</button></form></main></div>
+  );
+}
+
 function App() {
   const [showWebsite, setShowWebsite] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
+  const [page, setPage] = useState('home');
 
   useEffect(() => {
     AOS.init({ duration: 800, easing: 'ease-out-cubic', once: true });
   }, []);
+
+  useEffect(() => {
+    const syncPage = () => {
+      const nextPage = window.location.hash.replace('#', '');
+      setPage(['about', 'clients', 'contact'].includes(nextPage) ? nextPage : 'home');
+    };
+    syncPage();
+    window.addEventListener('hashchange', syncPage);
+    return () => window.removeEventListener('hashchange', syncPage);
+  }, []);
+
+  const navigate = (nextPage) => {
+    window.location.hash = nextPage === 'home' ? '' : nextPage;
+    setPage(nextPage);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   if (!showWebsite) {
     return (
@@ -122,6 +192,10 @@ function App() {
     );
   }
 
+  if (page !== 'home') {
+    return <InteriorPage page={page} onNavigate={navigate} />;
+  }
+
   return (
     <div className="min-h-screen bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.12),_transparent_38%),linear-gradient(180deg,#eaf6ff_0%,#e0f2ff_100%)] text-sky-900">
       <header data-aos="fade-down" className="relative z-10 overflow-hidden border-b border-blue-400/30 bg-[#061a3a]/95 backdrop-blur-xl">
@@ -136,10 +210,10 @@ function App() {
           </div>
 
           <nav aria-label="Primary" className="hidden md:flex md:items-center md:gap-6">
-            <a href="#" className="text-sm font-medium text-blue-100 hover:text-white">Home</a>
-            <a href="#about" className="text-sm font-medium text-blue-100 hover:text-white">About Us</a>
-            <a href="#clients" className="text-sm font-medium text-blue-100 hover:text-white">Clients</a>
-            <a href="#contact" className="text-sm font-medium text-blue-100 hover:text-white">Contact</a>
+            <button type="button" onClick={() => navigate('home')} className="text-sm font-medium text-blue-100 hover:text-white">Home</button>
+            <button type="button" onClick={() => navigate('about')} className="text-sm font-medium text-blue-100 hover:text-white">About Us</button>
+            <button type="button" onClick={() => navigate('clients')} className="text-sm font-medium text-blue-100 hover:text-white">Clients</button>
+            <button type="button" onClick={() => navigate('contact')} className="text-sm font-medium text-blue-100 hover:text-white">Contact</button>
             <button
               type="button"
               onClick={() => setShowWebsite(false)}
@@ -292,8 +366,8 @@ function App() {
 
                     <div>
                       <p className="text-2xl font-semibold">Email:</p>
-                      <a className="mt-2 block text-sky-200 hover:underline" href="mailto:vishwakarmapranav19@gmail.com">
-                        vishwakarmapranav19@gmail.com
+                      <a className="mt-2 block text-sky-200 hover:underline" href="mailto:shahanazawfoodandagro@gmail.com">
+                        shahanazawfoodandagro@gmail.com
                       </a>
                     </div>
 

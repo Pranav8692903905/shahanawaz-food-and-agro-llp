@@ -35,3 +35,186 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+.contact-page {
+  background-image: url('../contact.avif') !important;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.contact-page > main {
+  background-color: transparent !important;
+}
+
+.contact-page > main > form {
+  display: none;
+}
+
+.contact-page > main::after {
+  content: '';
+  display: block;
+  min-height: 420px;
+  align-self: center;
+  padding: 2rem;
+  border: 8px solid rgba(255, 255, 255, 0.82);
+  border-radius: 1.5rem;
+  background-image: linear-gradient(to bottom, rgba(23, 61, 53, 0.08) 35%, rgba(7, 35, 31, 0.88) 100%), url('../loc.png');
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0 24px 70px rgba(23, 61, 53, 0.3);
+  color: #ffffff;
+  white-space: pre-line;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.8;
+  letter-spacing: 0.08em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+
+.contact-page > main {
+  position: relative;
+}
+
+.contact-page > main::before {
+  content: 'FIND US  /  VISIT OUR OFFICE IN MUMBAI';
+  display: block;
+  position: absolute;
+  top: 3.5rem;
+  right: 0;
+  z-index: 2;
+  width: 50%;
+  color: #173d35;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.contact-page > main::after::first-line {
+  font-size: 1.4rem;
+}
+
+.contact-page > main > div {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 3.5rem 2.5rem;
+  background: linear-gradient(145deg, rgba(23, 61, 53, 0.96), rgba(7, 35, 31, 0.92));
+  color: #ffffff;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 1.5rem;
+  box-shadow: 0 24px 70px rgba(23, 61, 53, 0.28);
+  backdrop-filter: blur(8px);
+}
+
+.contact-page > main > div h1,
+.contact-page > main > div p,
+.contact-page > main > div a {
+  color: #ffffff;
+
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-page > main > div > p:not(:first-child) {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-page > main > div > div {
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+.contact-page > main > div > div > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-page > main > div a {
+  width: fit-content;
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+.contact-page > main > div a:hover {
+  color: #f2a16f;
+  transform: translateY(-2px);
+}
+
+.contact-page > main > div > p:first-child,
+.contact-page > main > div div p:first-child {
+  color: #f2a16f;
+}
+
+@media (max-width: 640px) {
+  .contact-page > main::after {
+    min-height: 300px;
+    border-width: 5px;
+    border-radius: 1rem;
+  }
+
+  .contact-page > main::before {
+    top: 1.5rem;
+    right: 1.5rem;
+    left: 1.5rem;
+    width: auto;
+    text-align: center;
+    font-size: 0.85rem;
+  }
+
+  .contact-page > main > div {
+    padding: 2.5rem 1.5rem;
+    border-radius: 1rem;
+  }
+}
+
+.client-page {
+  background-image: url('../client.jpg') !important;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.about-page {
+  background-image: url('../about.jpg') !important;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.about-page > main > section:first-child > div:first-child {
+  padding: 2.5rem;
+  background: linear-gradient(145deg, rgba(23, 61, 53, 0.95), rgba(7, 35, 31, 0.88));
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 1.5rem;
+  box-shadow: 0 24px 70px rgba(7, 35, 31, 0.28);
+  color: #ffffff;
+}
+
+.about-page > main > section:first-child > div:first-child h1,
+.about-page > main > section:first-child > div:first-child p {
+  color: #ffffff;
+}
+
+.about-page > main > section:first-child > div:first-child > p:first-child,
+.about-page > main > section:first-child > div:first-child > div p:first-child {
+  color: #f2a16f;
+}
+
+.about-page > main > section:first-child > div:first-child > div {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 640px) {
+  .about-page > main > section:first-child > div:first-child {
+    padding: 2rem 1.5rem;
+    border-radius: 1rem;
+  }
+}
